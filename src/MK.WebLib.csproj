@@ -3,12 +3,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{D27F862D-D339-4EB4-A0E4-FD80CAA8CEEB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>MK.Weebaa</RootNamespace>
-    <AssemblyName>MK.Weebaa</AssemblyName>
+    <AssemblyName>MK.WebLib</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,27 +28,24 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="MySql.Data">
-      <HintPath>..\ref\mysql-connector\6.9.5\mysql-connector-net-6.9.5-noinstall\v4.0\MySql.Data.dll</HintPath>
-    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
-    <Reference Include="BLToolkit.4">
-      <HintPath>..\ref\bltoolkit\4.1.0\BLToolkit.4.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Mvc">
-      <HintPath>..\ref\dot.net\v4\System.Web.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.JsonResult">
-      <HintPath>..\ref\NewtonSoft.Json60r7\Bin\Net40\Newtonsoft.JsonResult.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\ref\NewtonSoft.Json60r7\Bin\Net40\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Xml" />
+    <Reference Include="BLToolkit.4">
+      <HintPath>..\..\ref\bltoolkit\4.1.0\BLToolkit.4.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\ref\mysql-connector\6.9.5\mysql-connector-net-6.9.5-noinstall\v4.5\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.JsonResult">
+      <HintPath>..\..\ref\NewtonSoft.Json60r7\Bin\Net40\Newtonsoft.JsonResult.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\..\ref\dot.net\v4\System.Web.Mvc.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -64,6 +59,7 @@
     <Compile Include="Data\DataProvider\MySqlDataProvider.cs" />
     <Compile Include="Data\Db.cs" />
     <Compile Include="JsonExtension\DateTimeExtension.cs" />
+    <Compile Include="Web\Mvc\ToSelectList.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
