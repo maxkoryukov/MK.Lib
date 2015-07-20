@@ -62,6 +62,11 @@
     <Compile Include="Data\Db.cs" />
     <Compile Include="JsonExtension\DateTimeExtension.cs" />
     <Compile Include="Web\Mvc\ToSelectList.cs" />
+    <Compile Include="Collections\Generic\Pair.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Collections\" />
+    <Folder Include="Collections\Generic\" />
+  </ItemGroup>
 </Project>
