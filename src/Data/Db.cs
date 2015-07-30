@@ -17,8 +17,6 @@ namespace MK.WebLib.Data
 			
 		protected override void OnBeforeOperation(OperationType op)
 		{
-			var x = op;
-
 			if (this.IsQueryLogged)
 			{
 				// append user id:
