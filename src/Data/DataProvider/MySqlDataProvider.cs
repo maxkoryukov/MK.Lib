@@ -11,53 +11,60 @@ using MySql.Data.MySqlClient;
 namespace BLToolkit.Data.DataProvider
 {
 	using Sql.SqlProvider;
+	using Common;
 
-	public class MySqlDataProvider : DataProviderBase
+	public class MySqlDataProvider :  DataProviderBase
 	{
 		#region Static configuration
 
-		public static char ParameterSymbol { get; set; }
-		public static bool TryConvertParameterSymbol { get; set; }
-
-		private static List<char> _convertParameterSymbols;
-		public static List<char> ConvertParameterSymbols
+		public static char ParameterSymbol
 		{
-			get { return _convertParameterSymbols; }
-			set { _convertParameterSymbols = value ?? new List<char>(); }
+			get { return MySqlSqlProvider.ParameterSymbol;  }
+			set { MySqlSqlProvider.ParameterSymbol = value; }
+		}
+
+		public static bool TryConvertParameterSymbol
+		{
+			get { return MySqlSqlProvider.TryConvertParameterSymbol;  }
+			set { MySqlSqlProvider.TryConvertParameterSymbol = value; }
+		}
+
+		public  static string  CommandParameterPrefix
+		{
+			get { return MySqlSqlProvider.CommandParameterPrefix;  }
+			set { MySqlSqlProvider.CommandParameterPrefix = value; }
+		}
+
+		public  static string  SprocParameterPrefix
+		{
+			get { return MySqlSqlProvider.SprocParameterPrefix;  }
+			set { MySqlSqlProvider.SprocParameterPrefix = value; }
+		}
+
+		public  static List<char>  ConvertParameterSymbols
+		{
+			get { return MySqlSqlProvider.ConvertParameterSymbols;  }
+			set { MySqlSqlProvider.ConvertParameterSymbols = value; }
 		}
 
 		[Obsolete("Use CommandParameterPrefix or SprocParameterPrefix instead.")]
-		public static string ParameterPrefix
+		public  static string  ParameterPrefix
 		{
-			get { return _sprocParameterPrefix; }
-			set { _sprocParameterPrefix = _commandParameterPrefix = string.IsNullOrEmpty(value) ? string.Empty : value; }
-		}
-
-		private static string _commandParameterPrefix = "";
-		public static string CommandParameterPrefix
-		{
-			get { return _commandParameterPrefix; }
-			set { _commandParameterPrefix = string.IsNullOrEmpty(value) ? string.Empty : value; }
-		}
-
-		private static string _sprocParameterPrefix = "";
-		public static string SprocParameterPrefix
-		{
-			get { return _sprocParameterPrefix; }
-			set { _sprocParameterPrefix = string.IsNullOrEmpty(value) ? string.Empty : value; }
+			get { return MySqlSqlProvider.SprocParameterPrefix; }
+			set { SprocParameterPrefix = CommandParameterPrefix = string.IsNullOrEmpty(value) ? string.Empty : value; }
 		}
 
 		public static void ConfigureOldStyle()
 		{
-			ParameterSymbol = '?';
-			ConvertParameterSymbols = new List<char>(new char[] { '@' });
+			ParameterSymbol           = '?';
+			ConvertParameterSymbols   = new List<char>(new[] { '@' });
 			TryConvertParameterSymbol = true;
 		}
 
 		public static void ConfigureNewStyle()
 		{
-			ParameterSymbol = '@';
-			ConvertParameterSymbols = null;
+			ParameterSymbol           = '@';
+			ConvertParameterSymbols   = null;
 			TryConvertParameterSymbol = false;
 		}
 
@@ -105,33 +112,31 @@ namespace BLToolkit.Data.DataProvider
 			return false;
 		}
 
+		public override IDbDataParameter GetParameter(
+			IDbCommand command,
+			NameOrIndexParameter nameOrIndex)
+		{
+			if (nameOrIndex.ByName)
+			{
+				// if we have a stored procedure, then maybe command paramaters were formatted
+				// (SprocParameterPrefix added). In this case we need to format given parameter name first
+				// and only then try to take parameter by formatted parameter name
+				var parameterName = command.CommandType == CommandType.StoredProcedure
+					? Convert(nameOrIndex.Name, ConvertType.NameToSprocParameter).ToString()
+					: nameOrIndex.Name;
+
+				return (IDbDataParameter)(command.Parameters[parameterName]);
+			}
+			return (IDbDataParameter)(command.Parameters[nameOrIndex.Index]);
+		}
+
 		public override object Convert(object value, ConvertType convertType)
 		{
+			if (value == null)
+				throw new ArgumentNullException("value");
+
 			switch (convertType)
 			{
-				case ConvertType.NameToQueryParameter:
-					return ParameterSymbol + value.ToString();
-
-				case ConvertType.NameToCommandParameter:
-					return ParameterSymbol + CommandParameterPrefix + value.ToString();
-
-				case ConvertType.NameToSprocParameter:
-					return ParameterSymbol + SprocParameterPrefix + value.ToString();
-
-				case ConvertType.SprocParameterToName:
-					if (value != null)
-					{
-						string str = value.ToString();
-						str = (str.Length > 0 && (str[0] == ParameterSymbol || (TryConvertParameterSymbol && ConvertParameterSymbols.Contains(str[0])))) ? str.Substring(1) : str;
-
-						if ((!string.IsNullOrEmpty(SprocParameterPrefix))
-							&& str.StartsWith(SprocParameterPrefix))
-							str = str.Substring(SprocParameterPrefix.Length);
-
-						return str;
-					}
-					break;
-
 				case ConvertType.ExceptionToErrorNumber:
 					if (value is MySqlException)
 						return ((MySqlException)value).Number;
@@ -143,7 +148,21 @@ namespace BLToolkit.Data.DataProvider
 					break;
 			}
 
-			return value;
+			return SqlProvider.Convert(value, convertType);
+		}
+
+		public override DataExceptionType ConvertErrorNumberToDataExceptionType(int number)
+		{
+			switch (number)
+			{
+				case 1213: return DataExceptionType.Deadlock;
+				case 1205: return DataExceptionType.Timeout;
+				case 1216:
+				case 1217: return DataExceptionType.ForeignKeyViolation;
+				case 1169: return DataExceptionType.UniqueIndexViolation;
+			}
+
+			return DataExceptionType.Undefined;
 		}
 
 		public override Type ConnectionType
@@ -163,7 +182,7 @@ namespace BLToolkit.Data.DataProvider
 
 		public override void Configure(System.Collections.Specialized.NameValueCollection attributes)
 		{
-			string paremeterPrefix = attributes["ParameterPrefix"];
+			var paremeterPrefix = attributes["ParameterPrefix"];
 			if (paremeterPrefix != null)
 				CommandParameterPrefix = SprocParameterPrefix = paremeterPrefix;
 
@@ -175,7 +194,7 @@ namespace BLToolkit.Data.DataProvider
 			if (paremeterPrefix != null)
 				SprocParameterPrefix = paremeterPrefix;
 
-			string configName = attributes["ParameterSymbolConfig"];
+			var configName = attributes["ParameterSymbolConfig"];
 			if (configName != null)
 			{
 				switch (configName)
@@ -189,15 +208,15 @@ namespace BLToolkit.Data.DataProvider
 				}
 			}
 
-			string parameterSymbol = attributes["ParameterSymbol"];
+			var parameterSymbol = attributes["ParameterSymbol"];
 			if (parameterSymbol != null && parameterSymbol.Length == 1)
 				ParameterSymbol = parameterSymbol[0];
 
-			string convertParameterSymbols = attributes["ConvertParameterSymbols"];
+			var convertParameterSymbols = attributes["ConvertParameterSymbols"];
 			if (convertParameterSymbols != null)
 				ConvertParameterSymbols = new List<char>(convertParameterSymbols.ToCharArray());
 
-			string tryConvertParameterSymbol = attributes["TryConvertParameterSymbol"];
+			var tryConvertParameterSymbol = attributes["TryConvertParameterSymbol"];
 			if (tryConvertParameterSymbol != null)
 				TryConvertParameterSymbol = BLToolkit.Common.Convert.ToBoolean(tryConvertParameterSymbol);
 
