@@ -7,6 +7,8 @@
     <OutputType>Library</OutputType>
     <RootNamespace>MK.WebLib</RootNamespace>
     <AssemblyName>MK.WebLib</AssemblyName>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -46,6 +48,9 @@
     <Reference Include="Newtonsoft.JsonResult">
       <HintPath>..\..\ref\NewtonSoft.Json60r7\Bin\Net40\Newtonsoft.JsonResult.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\ref\NewtonSoft.Json60r7\Bin\Net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -63,6 +68,7 @@
     <Compile Include="Collections\Generic\Pair.cs" />
     <Compile Include="NullableCompareExt.cs" />
     <Compile Include="DateTimeExt.cs" />
+    <Compile Include="Web\Mvc\FromJsonAttribute.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
