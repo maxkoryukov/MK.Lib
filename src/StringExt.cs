@@ -66,5 +66,43 @@ namespace MK
 
 			return sb.ToString().Normalize(NormalizationForm.FormC);
 		}
+
+		/// <summary>
+		/// Return substring, which contains up to maxlen chars. If you need - it can append trailing ellipsis.
+		/// </summary>
+		/// <param name="s"></param>
+		/// <param name="maxlen"></param>
+		/// <param name="trailing_for_long"></param>
+		/// <returns></returns>
+		public static string Cutter(this string s, int maxlen, string trailing_for_long = null)
+		{
+			if (null == s)
+				return s;
+
+			if (maxlen < 0)
+				throw new ArgumentOutOfRangeException("maxlen", "must be greater than 0");
+
+			if (0 == maxlen)
+				return "";
+
+			int l = s.Length;
+
+			if (l <= maxlen)
+				return s;
+
+			int d = 0;
+			if (null == trailing_for_long)
+				trailing_for_long = "";
+			else
+				d = trailing_for_long.Length;
+
+			if (d > maxlen)
+			{
+				// the tail > maxlen
+				return trailing_for_long.Substring(0, maxlen);
+			}
+
+			return s.Substring(0, maxlen - d) + trailing_for_long;
+		}
 	}
 }
