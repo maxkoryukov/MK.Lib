@@ -8,8 +8,6 @@
     <RootNamespace>MK.WebLib</RootNamespace>
     <AssemblyName>MK.WebLib</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,6 +28,12 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.JsonResult">
+      <HintPath>..\packages\Newtonsoft.JsonResult.1.0.5778.10762\lib\net40\Newtonsoft.JsonResult.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
@@ -39,12 +43,6 @@
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
-    <Reference Include="MySql.Data">
-      <HintPath>packages\MySql.Data.6.9.8\lib\net45\MySql.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="MySql.Web">
-      <HintPath>packages\MySql.Web.6.9.8\lib\net45\MySql.Web.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.Razor">
       <HintPath>packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
     </Reference>
@@ -64,20 +62,15 @@
       <HintPath>packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="BLToolkit.4">
-      <HintPath>packages\BLToolkit.4.3.2\lib\net40\BLToolkit.4.dll</HintPath>
+      <HintPath>..\..\src\packages\BLToolkit.4.3.2\lib\net40\BLToolkit.4.dll</HintPath>
     </Reference>
     <Reference Include="BLToolkit.Data.DataProvider.MySql.4">
-      <HintPath>packages\BLToolkit.MySql.4.3.2\lib\net40\BLToolkit.Data.DataProvider.MySql.4.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.JsonResult">
-      <HintPath>packages\Newtonsoft.JsonResult.1.0.5778.10762\lib\net40\Newtonsoft.JsonResult.dll</HintPath>
+      <HintPath>..\..\src\packages\BLToolkit.MySql.4.3.2\lib\net40\BLToolkit.Data.DataProvider.MySql.4.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Text\StringEncodeExt.cs" />
     <Compile Include="Web\Mvc\AllowAccess.cs" />
     <Compile Include="Web\Mvc\BaseController.cs" />
     <Compile Include="Web\Mvc\StaticContentHelper.cs" />
@@ -94,10 +87,7 @@
     <Compile Include="Web\Mvc\FromJsonAttribute.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <Folder Include="Collections\" />
-    <Folder Include="Collections\Generic\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Data\DataProvider\MySqlDataProvider.cs" />
