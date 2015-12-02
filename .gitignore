@@ -5,3 +5,10 @@
 /src/obj/
 /src/packages/*
 
+/src/MK.WebLib/bin/*
+/src/MK.WebLib/obj/*
+/src/MK.WebLib/packages/*
+
+/src/MK.WebLib.T/bin/*
+/src/MK.WebLib.T/obj/*
+/src/MK.WebLib.T/packages/*
