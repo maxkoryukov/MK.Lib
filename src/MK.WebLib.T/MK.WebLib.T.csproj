@@ -47,7 +47,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="Text\StringEncodeExt.cs" />
+    <Compile Include="Text\StringEncodeExtTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
