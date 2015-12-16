@@ -2,7 +2,6 @@ version: '{branch}.{build}'
 
 before_build:
   - nuget restore
-  - pip install --user codecov
 
 build:
   verbosity: minimal
@@ -21,13 +20,11 @@ notifications:
   on_build_status_changed: true
 
 
-after_test: 
-  - codecov --token=c3b407f3-3a3f-4d7e-ba52-8833fc278b98
-
-#    - .\packages\OpenCover.4.5.3522\OpenCover.Console.exe -register:user -target:"C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\MSTest.exe" -targetargs:"/noresults /noisolation /testcontainer:"".\src\MK.WebLib.T\bin\MK.WebLib.T.dll" -filter:"+[MK]*  -[MK]MyProject.Properties.*" -excludebyattribute:*.ExcludeFromCodeCoverage* -hideskipped:All -output:.\MK.coverage.xml
+after_test:
+#    - .\packages\OpenCover.4.6.166\tools\OpenCover.Console.exe -register:user -target:"C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\MSTest.exe" -targetargs:"/noresults /noisolation /testcontainer:"".\src\MK.WebLib.T\bin\MK.WebLib.T.dll" -filter:"+[MK]*  -[MK]MyProject.Properties.*" -excludebyattribute:*.ExcludeFromCodeCoverage* -hideskipped:All -output:.\MK.coverage.xml
 #    - "SET PATH=C:\\Python34;C:\\Python34\\Scripts;%PATH%"
 #    - pip install codecov
 #    - codecov -f "MK.coverage.xml"
-#.\packages\OpenCover.4.6.166\tools\OpenCover.Console.exe -register:user -target:"C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\MSTest.exe" -targetargs:"/noresults /noisolation /testcontainer:"".\src\MK.WebLib.T\bin\MK.WebLib.T.dll" -filter:"+[MK]*  -[MK]MyProject.Properties.*" -excludebyattribute:*.ExcludeFromCodeCoverage* -hideskipped:All -output:.\MK.coverage.xml
+#
 #pip install --user codecov
 #codecov --token=<private repository token>
