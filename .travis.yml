@@ -5,8 +5,8 @@ mono:
 
 solution: MK.WebLib.sln
 
-before_install:
-  - pip install --user codecov
+#before_install:
+#  - pip install --user codecov
 
 install:
   - nuget restore MK.WebLib.sln
@@ -16,5 +16,5 @@ script:
   - xbuild MK.WebLib.sln /p:Configuration=Release
   - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./src/MK.WebLib.T/bin/MK.WebLib.T.dll
 
-after_success:
-  - codecov
+#after_success:
+#  - codecov
