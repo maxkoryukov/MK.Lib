@@ -6,8 +6,8 @@ mono:
 solution: MK.WebLib.sln
 install:
   - nuget restore MK.WebLib.sln
-  - nuget restore ./src/MK.WebLib/packages.config
-  - nuget resotre ./src/MK.WebLib.T/packages.config
+#  - nuget restore ./src/MK.WebLib/packages.config
+#  - nuget resotre ./src/MK.WebLib.T/packages.config
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
 
 script:
