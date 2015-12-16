@@ -84,6 +84,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Text\StringEncodeExt.cs" />
+    <Compile Include="Web\FormDataCollection.cs" />
     <Compile Include="Web\Mvc\AllowAccess.cs" />
     <Compile Include="Web\Mvc\BaseController.cs" />
     <Compile Include="Web\Mvc\StaticContentHelper.cs" />
