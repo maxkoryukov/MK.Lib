@@ -1,8 +1,13 @@
 language: csharp
+sudo: false
+mono:
+  - latest
+
 solution: MK.WebLib.sln
 install:
   - nuget restore MK.WebLib.sln
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
+
 script:
-  - xbuild /p:Configuration=Release MK.WebLib.sln
+  - xbuild MK.WebLib.sln /p:Configuration=Release /p:Framework="net-4.5"
   - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./src/MK.WebLib.T/bin/MK.WebLib.T.dll
