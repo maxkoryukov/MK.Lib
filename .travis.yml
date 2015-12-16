@@ -7,6 +7,8 @@ solution: MK.WebLib.sln
 install:
   - nuget restore MK.WebLib.sln
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
+  - ls -R
+  - ls -R ./packages
 
 script:
   - xbuild MK.WebLib.sln /p:Configuration=Release /p:Framework="net-4.5"
