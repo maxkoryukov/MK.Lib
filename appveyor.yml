@@ -1,5 +1,9 @@
-version: 0.2.x.{build}-{branch}
+ver: 0.2.3.{build}
 
+version: {ver}-{branch}
+
+pull_requests:
+  do_not_increment_build_number: true
 clone_folder: c:\projects\MK.WebLib
 
 cache:
@@ -8,8 +12,8 @@ cache:
 assembly_info:
   patch: true
   file: AssemblyInfo.*
-  assembly_version: "{version}"
-  assembly_file_version: "{version}"
+  assembly_version: "{ver}"
+  assembly_file_version: "{ver}"
 
 before_build:
   - nuget restore
