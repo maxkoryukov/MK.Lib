@@ -16,10 +16,6 @@ before_build:
 
 configuration: Release
 
-platform:
-- x86
-- x64
-
 environment:
   COVERALLS_REPO_TOKEN:
     secure: 2Ms497ur1lidXPzesGpHAMTsmQqEDMuavbfkRKfaZiipJGplapYxCckeNJ+hYbUl
