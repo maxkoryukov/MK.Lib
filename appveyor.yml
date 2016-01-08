@@ -3,12 +3,26 @@ version: '{branch}.{build}'
 before_build:
   - nuget restore
 
+configuration: Release
+platform:
+- x86
+- x64
+environment:
+  COVERALLS_REPO_TOKEN:
+    secure: 2Ms497ur1lidXPzesGpHAMTsmQqEDMuavbfkRKfaZiipJGplapYxCckeNJ+hYbUl
 build:
   verbosity: minimal
 test:
   categories:
     except:
     - skip
+artifacts:
+- path: bin/Relative/MK.WebLib.dll
+  name: MK.WebLib.dll
+after_test: 
+  - .\packages\OpenCover.4.6.166\tools\OpenCover.Console.exe -register:user -filter:"+[*]*" -target:nunit-console -targetargs:"/noshadow /domain:single src\MK.WebLib.T\bin\MK.WebLib.T.dll" -output:coverage.xml
+  - .\packages\coveralls.io.1.3.4\tools\coveralls.net.exe --opencover coverage.xml
+
 notifications:
 - provider: Email
   to:
@@ -18,13 +32,3 @@ notifications:
   on_build_success: false
   on_build_failure: false
   on_build_status_changed: true
-
-
-after_test:
-#    - .\packages\OpenCover.4.6.166\tools\OpenCover.Console.exe -register:user -target:"C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\MSTest.exe" -targetargs:"/noresults /noisolation /testcontainer:"".\src\MK.WebLib.T\bin\MK.WebLib.T.dll" -filter:"+[MK]*  -[MK]MyProject.Properties.*" -excludebyattribute:*.ExcludeFromCodeCoverage* -hideskipped:All -output:.\MK.coverage.xml
-#    - "SET PATH=C:\\Python34;C:\\Python34\\Scripts;%PATH%"
-#    - pip install codecov
-#    - codecov -f "MK.coverage.xml"
-#
-#pip install --user codecov
-#codecov --token=<private repository token>

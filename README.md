@@ -1,6 +1,7 @@
 # MK.WebLib
 
-[![Build Status](https://travis-ci.org/maxkoryukov/MK.WebLib.svg?branch=master)](https://travis-ci.org/maxkoryukov/MK.WebLib) [![Build status](https://ci.appveyor.com/api/projects/status/fyryakdbexnkgjwh?svg=true)](https://ci.appveyor.com/project/maxkoryukov/mk-weblib)
-
+[![Build Status](https://travis-ci.org/maxkoryukov/MK.WebLib.svg?branch=master)](https://travis-ci.org/maxkoryukov/MK.WebLib)
+[![Build status](https://ci.appveyor.com/api/projects/status/fyryakdbexnkgjwh?svg=true)](https://ci.appveyor.com/project/maxkoryukov/mk-weblib)
+[![Coverage Status](https://coveralls.io/repos/maxkoryukov/MK.WebLib/badge.svg?branch=master&service=github)](https://coveralls.io/github/maxkoryukov/MK.WebLib?branch=master)
 
 Useful tools for me.

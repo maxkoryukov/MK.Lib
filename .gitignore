@@ -14,3 +14,5 @@
 /src/MK.WebLib.T/bin/*
 /src/MK.WebLib.T/obj/*
 /src/MK.WebLib.T/packages/*
+coverage.xml
+coverage-send.bat
