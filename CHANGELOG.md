@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.2.4
+
+* another one step to AppVeyor
+* NUnit 2.6.4 pfooof...
+
 ## 0.2.2
 
 * coveralls.io integration
