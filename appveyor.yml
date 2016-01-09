@@ -1,4 +1,4 @@
-version: $(VERSION_PREFIX)-{branch}
+version: $(VERSION_NUMBER)-{branch}
 
 pull_requests:
   do_not_increment_build_number: true
@@ -10,8 +10,8 @@ cache:
 assembly_info:
   patch: true
   file: AssemblyInfo.*
-  assembly_version: $(VERSION_PREFIX)
-  assembly_file_version: $(VERSION_PREFIX)
+  assembly_version: $(VERSION_NUMBER)
+  assembly_file_version: $(VERSION_NUMBER)
 
 before_build:
   - nuget restore
@@ -19,7 +19,7 @@ before_build:
 configuration: Release
 
 environment:
-  VERSION_PREFIX: 0.2.3.{build}
+  VERSION_NUMBER: 0.2.3.$(build)
 
   COVERALLS_REPO_TOKEN:
     secure: 2Ms497ur1lidXPzesGpHAMTsmQqEDMuavbfkRKfaZiipJGplapYxCckeNJ+hYbUl
