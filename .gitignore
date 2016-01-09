@@ -14,5 +14,7 @@
 /src/MK.WebLib.T/bin/*
 /src/MK.WebLib.T/obj/*
 /src/MK.WebLib.T/packages/*
+
+PRIVATE-*
 coverage.xml
-coverage-send.bat
+TestResult.xml
