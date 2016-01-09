@@ -1,4 +1,5 @@
 *.userprefs
+*.VisualState.xml
 
 /.project
 /packages/*

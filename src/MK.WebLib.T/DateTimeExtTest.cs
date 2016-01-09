@@ -6,13 +6,13 @@ namespace Lib
 	[TestFixture]
 	public class DateTimeExtTest
 	{
+		DateTime d = new DateTime(2015, 03, 12, 11, 15, 1);
+		DateTime t = new DateTime(2015, 03, 13, 12, 0, 0);
+		DateTime y = new DateTime(2015, 02, 12, 18, 1, 19);
+
 		[Test]
 		public void IsInRangeTrue()
 		{
-			var d = new DateTime(2015, 03, 12, 11, 15, 1);
-			var t = new DateTime(2015, 03, 13, 12, 0, 0);
-			var y = new DateTime(2015, 02, 12, 18, 1, 19);
-
 			Assert.IsTrue(d.IsInRange(null, null));
 			Assert.IsTrue(d.IsInRange(null, t));
 			Assert.IsTrue(d.IsInRange(y, null));
@@ -20,16 +20,19 @@ namespace Lib
 		}
 
 		[Test]
-		public void IsInRangeFalse()
+		public void IsInRangeFalseNullYesterday()
 		{
-			var d = new DateTime(2015, 03, 12, 11, 15, 1);
-			var t = new DateTime(2015, 03, 13, 12, 0, 0);
-			var y = new DateTime(2015, 02, 12, 18, 1, 19);
-
-			Assert.IsTrue(d.IsInRange(null, null));
-			Assert.IsTrue(d.IsInRange(null, y));
-			Assert.IsTrue(d.IsInRange(t, null));
-			Assert.IsTrue(d.IsInRange(t, y));
+			Assert.IsFalse(d.IsInRange(null, y));
+		}
+		[Test]
+		public void IsInRangeFalseTomorrowNull()
+		{
+			Assert.IsFalse(d.IsInRange(t, null));
+		}
+		[Test]
+		public void IsInRangeFalseYesterdayTomorrow()
+		{
+			Assert.IsFalse(d.IsInRange(t, y));
 		}
 	}
 }
