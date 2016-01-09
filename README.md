@@ -7,4 +7,4 @@ Useful tools for me.
 
 ## Credits
 
-* Thanks [**coveralls.net team**](https://github.com/coveralls-net/coveralls.net/graphs/contributors) for the detailed HOWTO : https://github.com/coveralls-net/coveralls.net/wiki/CI-Integrations
+* Thanks [**coveralls.net team**](https://github.com/coveralls-net/coveralls.net/graphs/contributors) for the detailed [HOWTO](https://github.com/coveralls-net/coveralls.net/wiki/CI-Integrations)
