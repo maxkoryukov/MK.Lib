@@ -1,6 +1,4 @@
-ver: 0.2.3.{build}
-
-version: {ver}-{branch}
+version: $(VERSION_PREFIX)-{branch}
 
 pull_requests:
   do_not_increment_build_number: true
@@ -12,8 +10,8 @@ cache:
 assembly_info:
   patch: true
   file: AssemblyInfo.*
-  assembly_version: "{ver}"
-  assembly_file_version: "{ver}"
+  assembly_version: $(VERSION_PREFIX)
+  assembly_file_version: $(VERSION_PREFIX)
 
 before_build:
   - nuget restore
@@ -21,6 +19,8 @@ before_build:
 configuration: Release
 
 environment:
+  VERSION_PREFIX: 0.2.3.{build}
+
   COVERALLS_REPO_TOKEN:
     secure: 2Ms497ur1lidXPzesGpHAMTsmQqEDMuavbfkRKfaZiipJGplapYxCckeNJ+hYbUl
 
@@ -36,8 +36,8 @@ artifacts:
 - path: bin/Relative/MK.WebLib.dll
   name: MK.WebLib.dll
 after_test: 
-  - c:\projects\MK.WebLib\packages\OpenCover.4.6.166\tools\OpenCover.Console.exe -register:user -filter:"+[*]*" -target:nunit-console -targetargs:"/noshadow /domain:single src\MK.WebLib.T\bin\MK.WebLib.T.dll" -output:coverage.xml
-  - c:\projects\MK.WebLib\packages\coveralls.io.1.3.4\tools\coveralls.net.exe --opencover coverage.xml
+  - $(APPVEYOR_BUILD_FOLDER)\packages\OpenCover.4.6.166\tools\OpenCover.Console.exe -register:user -filter:"+[*]*" -target:nunit-console -targetargs:"/noshadow /domain:single src\MK.WebLib.T\bin\MK.WebLib.T.dll" -output:coverage.xml
+  - $(APPVEYOR_BUILD_FOLDER)\packages\coveralls.io.1.3.4\tools\coveralls.net.exe --opencover coverage.xml
 
 notifications:
 - provider: Email
