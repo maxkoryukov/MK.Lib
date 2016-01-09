@@ -29,7 +29,6 @@ build:
   verbosity: minimal
 
 test:
-test:
   # assemblies to test - optional
   assemblies:
     - '**\*.T.dll'
