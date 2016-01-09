@@ -51,6 +51,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Collections\Generic\PairTest.cs" />
     <Compile Include="DateTimeExtTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Text\StringEncodeExtTest.cs" />
