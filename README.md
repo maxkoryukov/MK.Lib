@@ -5,6 +5,10 @@
 
 Useful tools for me.
 
-## Credits
+## Thanks
 
-* Thanks [**coveralls.net team**](https://github.com/coveralls-net/coveralls.net/graphs/contributors) for the detailed [HOWTO](https://github.com/coveralls-net/coveralls.net/wiki/CI-Integrations)
+* to [**coveralls.net team**](https://github.com/coveralls-net/coveralls.net/graphs/contributors) for the detailed [HOWTO](https://github.com/coveralls-net/coveralls.net/wiki/CI-Integrations)
+
+## No thanks
+
+Seems like I really hate nuget, msvs and its "references"-system.
