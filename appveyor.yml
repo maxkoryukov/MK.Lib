@@ -1,4 +1,4 @@
-version: $(VERSION_NUMBER)-{branch}
+version: $(MY_VERSION_NUMBER).{build}-{branch}
 
 pull_requests:
   do_not_increment_build_number: true
@@ -10,8 +10,8 @@ cache:
 assembly_info:
   patch: true
   file: AssemblyInfo.*
-  assembly_version: $(VERSION_NUMBER)
-  assembly_file_version: $(VERSION_NUMBER)
+  assembly_version: $(MY_VERSION_NUMBER).{build}
+  assembly_file_version: $(MY_VERSION_NUMBER).{build}
 
 before_build:
   - nuget restore
@@ -19,12 +19,13 @@ before_build:
 configuration: Release
 
 environment:
-  VERSION_NUMBER: 0.2.3.$(APPVEYOR_BUILD_NUMBER)
+  MY_VERSION_NUMBER: 0.2.3
 
   COVERALLS_REPO_TOKEN:
     secure: 2Ms497ur1lidXPzesGpHAMTsmQqEDMuavbfkRKfaZiipJGplapYxCckeNJ+hYbUl
 
 build:
+  project: MK.WebLib.sln
   verbosity: minimal
 
 test:
