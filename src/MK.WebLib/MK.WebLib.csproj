@@ -96,7 +96,7 @@
     <Compile Include="JsonExtension\DateTimeExtension.cs" />
     <Compile Include="Web\Mvc\ToSelectList.cs" />
     <Compile Include="Collections\Generic\Pair.cs" />
-    <Compile Include="NullableCompareExt.cs" />
+    <Compile Include="NullUtil.cs" />
     <Compile Include="DateTimeExt.cs" />
     <Compile Include="Web\Mvc\FromJsonAttribute.cs" />
   </ItemGroup>

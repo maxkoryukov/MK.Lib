@@ -3,11 +3,11 @@
 namespace MK
 {
 	/// <summary>
-	/// Метим исключения, как наши, родные, хорошие, обрабатываемые
+	/// Set mark on exception
 	/// </summary>
 	public static class ExceptionMarkExtension
 	{
-		public const string Mark = "vlb-exc-flag";
+		public const string Mark = "own-exc-flag";
 		public static Exception SetMark(this Exception e)
 		{
 			if (null != e)

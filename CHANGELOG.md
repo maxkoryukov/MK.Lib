@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.3.0
+
+* More tests
+* NullableExtension is die. NullUtil added (cause it makes no sense to call methods on null, idiot!)
+
 ## 0.2.4
 
 * another one step to AppVeyor
