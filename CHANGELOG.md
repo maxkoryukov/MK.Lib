@@ -4,6 +4,8 @@
 
 * Improved Exception Extension
 
+----
+
 ## 0.3.0
 
 * More tests
