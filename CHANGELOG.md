@@ -2,7 +2,8 @@
 
 ## 0.3.1
 
-* Improved Exception Extension
+* Improved `ExceptionExtension`
+* Some `StringExt` tests
 
 ----
 

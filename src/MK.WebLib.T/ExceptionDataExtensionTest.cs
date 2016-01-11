@@ -116,5 +116,12 @@ namespace MK
 			Assert.IsTrue(e.HasData(k1));
 			Assert.AreEqual(v1, e.GetData(k1));
 		}
+
+		[Test]
+		public void GetNonExistentData()
+		{
+			Exception e = Assert.Throws<DivideByZeroException>(() => { this.ThrowSystem1(); });
+			Assert.Throws<ArgumentOutOfRangeException>(() => { e.GetData("this-is-unknown-key-for-me-hello!"); });
+		}
 	}
 }

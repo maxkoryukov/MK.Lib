@@ -91,7 +91,7 @@
     <Compile Include="Web\BaseHttpApplication.cs" />
     <Compile Include="ByteArrayExt.cs" />
     <Compile Include="ExceptionDataExtension.cs" />
-    <Compile Include="StringExt.cs" />
+    <Compile Include="Text\StringExt.cs" />
     <Compile Include="Data\Db.cs" />
     <Compile Include="JsonExtension\DateTimeExtension.cs" />
     <Compile Include="Web\Mvc\ToSelectList.cs" />

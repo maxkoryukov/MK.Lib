@@ -56,6 +56,7 @@
     <Compile Include="DateTimeExtTest.cs" />
     <Compile Include="NullUtilTest.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Text\StringExtTest.cs" />
     <Compile Include="Text\StringEncodeExtTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Web\FormDataCollectionTest.cs" />
