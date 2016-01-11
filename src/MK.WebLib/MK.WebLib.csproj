@@ -90,7 +90,7 @@
     <Compile Include="Web\Mvc\StaticContentHelper.cs" />
     <Compile Include="Web\BaseHttpApplication.cs" />
     <Compile Include="ByteArrayExt.cs" />
-    <Compile Include="ExceptionMarkExtension.cs" />
+    <Compile Include="ExceptionDataExtension.cs" />
     <Compile Include="StringExt.cs" />
     <Compile Include="Data\Db.cs" />
     <Compile Include="JsonExtension\DateTimeExtension.cs" />

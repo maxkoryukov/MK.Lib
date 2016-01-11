@@ -52,7 +52,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Collections\Generic\PairTest.cs" />
-    <Compile Include="ExceptionMarkExtensionTest.cs" />
+    <Compile Include="ExceptionDataExtensionTest.cs" />
     <Compile Include="DateTimeExtTest.cs" />
     <Compile Include="NullUtilTest.cs" />
     <Compile Include="Program.cs" />
