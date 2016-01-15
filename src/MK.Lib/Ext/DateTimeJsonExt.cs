@@ -10,7 +10,7 @@ namespace MK.Ext
 		private static readonly DateTime D1970_01_01 = new DateTime(1970, 1, 1);
 		public static string JsonValue(this DateTime d)
 		{
-			return "( new Date(" + System.Convert.ToInt64((d - D1970_01_01).TotalMilliseconds) + "))";
+			return "( new Date(" + ((d.Ticks - D1970_01_01.Ticks) / 10000) + "))";
 		}
 	}
 }
