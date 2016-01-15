@@ -1,8 +1,9 @@
 version: $(MY_VERSION_NUMBER).{build}-{branch}
 
 pull_requests:
-  do_not_increment_build_number: true
-clone_folder: c:\projects\MK.WebLib
+  do_not_increment_build_number: true
+
+clone_folder: c:\projects\MK.Lib
 
 cache:
   - packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
@@ -25,7 +26,7 @@ environment:
     secure: 2Ms497ur1lidXPzesGpHAMTsmQqEDMuavbfkRKfaZiipJGplapYxCckeNJ+hYbUl
 
 build:
-  project: MK.WebLib.sln
+  project: MK.Lib.sln
   verbosity: minimal
 
 test:
@@ -37,8 +38,8 @@ test:
     - skip
 
 artifacts:
-- path: src\MK.WebLib\bin\Release\MK.WebLib.dll
-  name: MK.WebLib.dll
+- path: src\MK.WebLib\bin\Release\MK.Lib.dll
+  name: MK.Lib.dll
 
 after_test: 
   - cmd: coverage-calc.bat
@@ -49,7 +50,7 @@ notifications:
   to:
   - maxkoryukov@yandex.ru
   subject: AppVeyor Notification for you, dude
-  message: Something changes on AppVeyour https://ci.appveyor.com/project/maxkoryukov/mk-weblib
+  message: Something changes on AppVeyour https://ci.appveyor.com/project/maxkoryukov/mk-lib
   on_build_success: false
   on_build_failure: false
   on_build_status_changed: true
