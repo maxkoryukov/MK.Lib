@@ -2,7 +2,7 @@
 using System.Text;
 using NUnit.Framework;
 
-namespace MK.Text
+namespace MK.Ext
 {
 	[TestFixture]
 	public class StringEncodeExtTest

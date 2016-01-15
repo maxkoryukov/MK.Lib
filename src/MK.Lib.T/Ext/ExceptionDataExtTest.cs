@@ -1,7 +1,7 @@
 ﻿using System;
 using NUnit.Framework;
 
-namespace MK
+namespace MK.Ext
 {
 	[TestFixture]
 	public class ExceptionDataExtensionTest
@@ -67,7 +67,7 @@ namespace MK
 		public void IsNotMarkedCustomMarked()
 		{
 			var e = Assert.Throws<DivideByZeroException>(() => { this.ThrowSystem1(); });
-			ExceptionDataExtension.SetData(e, ExceptionDataExtension.Mark, 12);
+			ExceptionDataExt.SetData(e, ExceptionDataExt.Mark, 12);
 			Assert.IsFalse(e.GetMark());
 		}
 
@@ -81,7 +81,7 @@ namespace MK
 		public void HasDataTrue()
 		{
 			Exception e = Assert.Throws<InvalidTimeZoneException>(() => { this.ThrowOwn("asdf"); });
-			Assert.IsTrue(e.HasData(ExceptionDataExtension.Mark));
+			Assert.IsTrue(e.HasData(ExceptionDataExt.Mark));
 
 			e = Assert.Throws<DivideByZeroException>(() => { this.ThrowSystem1(); });
 			e.SetData("asdf", 12);
@@ -92,7 +92,7 @@ namespace MK
 		public void SetDataNullThrows()
 		{
 			Exception e = null;
-			Assert.Throws<NullReferenceException>(() => { ExceptionDataExtension.SetData(e, "123", 100); });
+			Assert.Throws<NullReferenceException>(() => { ExceptionDataExt.SetData(e, "123", 100); });
 		}
 		[Test]
 		public void SetMarkNullThrows()

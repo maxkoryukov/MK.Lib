@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Lib
+namespace MK.Ext
 {
 	public static class DateTimeExt
 	{

@@ -52,13 +52,13 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Collections\Generic\PairTest.cs" />
-    <Compile Include="ExceptionDataExtensionTest.cs" />
-    <Compile Include="DateTimeExtTest.cs" />
+    <Compile Include="Ext\ExceptionDataExtTest.cs" />
+    <Compile Include="Ext\DateTimeExtTest.cs" />
     <Compile Include="Ext\DateTimeJsonExtTest.cs" />
     <Compile Include="NullUtilTest.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Text\StringExtTest.cs" />
-    <Compile Include="Text\StringEncodeExtTest.cs" />
+    <Compile Include="Ext\StringExtTest.cs" />
+    <Compile Include="Ext\StringEncodeExtTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Web\FormDataCollectionTest.cs" />
   </ItemGroup>

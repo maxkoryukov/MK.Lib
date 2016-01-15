@@ -83,21 +83,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Text\StringEncodeExt.cs" />
+    <Compile Include="Ext\StringEncodeExt.cs" />
     <Compile Include="Web\FormDataCollection.cs" />
     <Compile Include="Web\Mvc\AllowAccess.cs" />
     <Compile Include="Web\Mvc\BaseController.cs" />
     <Compile Include="Web\Mvc\StaticContentHelper.cs" />
     <Compile Include="Web\BaseHttpApplication.cs" />
-    <Compile Include="ByteArrayExt.cs" />
-    <Compile Include="ExceptionDataExtension.cs" />
-    <Compile Include="Text\StringExt.cs" />
+    <Compile Include="Ext\ByteArrayExt.cs" />
+    <Compile Include="Ext\ExceptionDataExt.cs" />
+    <Compile Include="Ext\StringExt.cs" />
     <Compile Include="Data\Db.cs" />
     <Compile Include="Ext\DateTimeJsonExt.cs" />
     <Compile Include="Web\Mvc\ToSelectList.cs" />
     <Compile Include="Collections\Generic\Pair.cs" />
     <Compile Include="NullUtil.cs" />
-    <Compile Include="DateTimeExt.cs" />
+    <Compile Include="Ext\DateTimeExt.cs" />
     <Compile Include="Web\Mvc\FromJsonAttribute.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

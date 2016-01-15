@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MK
+namespace MK.Ext
 {
 	public static class ByteArrayExt
 	{

@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace MK
+namespace MK.Ext
 {
 	/// <summary>
 	/// Set mark on exception
 	/// </summary>
-	public static class ExceptionDataExtension
+	public static class ExceptionDataExt
 	{
 		#region Mark Helper
 		public const string Mark = "own-exc-flag";

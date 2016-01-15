@@ -1,7 +1,7 @@
 ﻿using System;
 using NUnit.Framework;
 
-namespace Lib
+namespace MK.Ext
 {
 	[TestFixture]
 	public class DateTimeExtTest

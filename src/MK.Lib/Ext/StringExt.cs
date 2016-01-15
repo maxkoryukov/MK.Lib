@@ -2,7 +2,7 @@
 using System.Text;
 using System.Globalization;
 
-namespace MK.Text
+namespace MK.Ext
 {
 	public static class StringExt
 	{

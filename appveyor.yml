@@ -21,7 +21,7 @@ before_build:
 configuration: Release
 
 environment:
-  MY_VERSION_NUMBER: 0.3.1
+  MY_VERSION_NUMBER: 1.0.0
 
   COVERALLS_REPO_TOKEN:
     secure: 2Ms497ur1lidXPzesGpHAMTsmQqEDMuavbfkRKfaZiipJGplapYxCckeNJ+hYbUl
