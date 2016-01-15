@@ -6,8 +6,8 @@
     <ProjectGuid>{253919B9-7A1E-4266-BF30-2BEC215A2B44}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MK.WebLib.T</RootNamespace>
-    <AssemblyName>MK.WebLib.T</AssemblyName>
+    <RootNamespace>MK.Lib.T</RootNamespace>
+    <AssemblyName>MK.Lib.T</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -54,6 +54,7 @@
     <Compile Include="Collections\Generic\PairTest.cs" />
     <Compile Include="ExceptionDataExtensionTest.cs" />
     <Compile Include="DateTimeExtTest.cs" />
+    <Compile Include="Ext\DateTimeJsonExtTest.cs" />
     <Compile Include="NullUtilTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Text\StringExtTest.cs" />
@@ -62,9 +63,9 @@
     <Compile Include="Web\FormDataCollectionTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MK.WebLib\MK.WebLib.csproj">
+    <ProjectReference Include="..\MK.Lib\MK.Lib.csproj">
       <Project>{d27f862d-d339-4eb4-a0e4-fd80caa8ceeb}</Project>
-      <Name>MK.WebLib</Name>
+      <Name>MK.Lib</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -90,7 +91,7 @@
   </Choose>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>

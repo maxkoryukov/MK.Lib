@@ -38,10 +38,10 @@ test:
     - skip
 
 artifacts:
-- path: src\MK.WebLib\bin\Release\MK.Lib.dll
+- path: src\MK.Lib\bin\Release\MK.Lib.dll
   name: MK.Lib.dll
 
-after_test: 
+after_test:
   - cmd: coverage-calc.bat
   - cmd: coverage-send.bat
 

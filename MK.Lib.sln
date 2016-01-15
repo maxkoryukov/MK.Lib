@@ -3,9 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MK.WebLib", "src\MK.WebLib\MK.WebLib.csproj", "{D27F862D-D339-4EB4-A0E4-FD80CAA8CEEB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MK.Lib", "src\MK.Lib\MK.Lib.csproj", "{D27F862D-D339-4EB4-A0E4-FD80CAA8CEEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MK.WebLib.T", "src\MK.WebLib.T\MK.WebLib.T.csproj", "{253919B9-7A1E-4266-BF30-2BEC215A2B44}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MK.Lib.T", "src\MK.Lib.T\MK.Lib.T.csproj", "{253919B9-7A1E-4266-BF30-2BEC215A2B44}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B1BF0F6C-2657-4C48-8B63-3D81B3D5ADC8}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

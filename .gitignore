@@ -4,18 +4,11 @@
 /.project
 /packages/*
 
-/src/bin/
-/src/obj/
-/src/packages/*
+/**/bin/
+/**/obj/
+/**/packages/*
 
-/src/MK.WebLib/bin/*
-/src/MK.WebLib/obj/*
-/src/MK.WebLib/packages/*
-
-/src/MK.WebLib.T/bin/*
-/src/MK.WebLib.T/obj/*
-/src/MK.WebLib.T/packages/*
+/coverage.xml
+/TestResult.xml
 
 PRIVATE-*
-coverage.xml
-TestResult.xml

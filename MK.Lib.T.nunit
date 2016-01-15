@@ -1,6 +1,6 @@
 ﻿<NUnitProject>
   <Settings activeconfig="Default" />
   <Config name="Default" binpathtype="Auto">
-    <assembly path="src\MK.WebLib.T\bin\MK.WebLib.T.dll" />
+    <assembly path="src\MK.Lib.T\bin\MK.Lib.T.dll" />
   </Config>
 </NUnitProject>
