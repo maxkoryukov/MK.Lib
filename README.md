@@ -1,7 +1,7 @@
-# MK.WebLib
+# MK.Lib
 
-[![Build status](https://ci.appveyor.com/api/projects/status/fyryakdbexnkgjwh?svg=true)](https://ci.appveyor.com/project/maxkoryukov/mk-weblib)
-[![Coverage Status](https://coveralls.io/repos/maxkoryukov/MK.WebLib/badge.svg?branch=master&service=github)](https://coveralls.io/github/maxkoryukov/MK.WebLib?branch=master)
+[![Build status](https://ci.appveyor.com/api/projects/status/fyryakdbexnkgjwh?svg=true)](https://ci.appveyor.com/project/maxkoryukov/mk-lib)
+[![Coverage Status](https://coveralls.io/repos/maxkoryukov/MK.Lib/badge.svg?branch=master&service=github)](https://coveralls.io/github/maxkoryukov/MK.Lib?branch=master)
 
 My useful C# things
 
