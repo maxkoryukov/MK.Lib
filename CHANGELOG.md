@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 0.4.1
+## 0.4.2
 
 * WebLib -> Lib
 * Move extensions to the Ext
