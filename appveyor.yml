@@ -48,7 +48,9 @@ after_test:
 
 deploy:
   release: MK.Lib-$(MY_VERSION_NUMBER)
-  description: '$(MY_VERSION_NUMBER) Release description'
+  description: '[![Coverage Status](https://coveralls.io/repos/maxkoryukov/MK.Lib/badge.svg?branch=$(MY_VERSION_NUMBER)&service=github)](https://coveralls.io/github/maxkoryukov/MK.Lib?branch=$(MY_VERSION_NUMBER))
+
+* WebLib -> Lib'
   provider: GitHub
   auth_token:
     secure: cMlMNvFKbCJ4qniAHC5tPYS5xTA0MvGsBgbTc+zykO5I02heS+DFt5d0tcACXbcw
@@ -56,8 +58,8 @@ deploy:
   draft: true
   prerelease: false
   on:
-    branch: master                 # release from master branch only
-    appveyor_repo_tag: false        # deploy on tag push only
+    # branch: master                # release from master branch only
+    appveyor_repo_tag: true         # deploy on tag push only
 
 notifications:
 - provider: Email
