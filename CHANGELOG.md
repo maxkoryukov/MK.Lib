@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 0.4.1
+
+* WebLib -> Lib
+* Move extensions to the Ext
+
+----
+
 ## 0.3.1
 
 * Improved `ExceptionExtension`
