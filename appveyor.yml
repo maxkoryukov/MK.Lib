@@ -16,7 +16,6 @@ assembly_info:
 
 before_build:
   - nuget restore
-  - type src\MK.Lib\Properties\AssemblyInfo.cs
 
 configuration: Release
 
