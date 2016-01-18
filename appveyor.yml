@@ -32,6 +32,7 @@ build:
 test:
   # assemblies to test - optional
   assemblies:
+    - '**\*.T.exe'
     - '**\*.T.dll'
   categories:
     except:
