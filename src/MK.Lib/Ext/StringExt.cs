@@ -17,26 +17,36 @@ namespace MK.Ext
 		}
 
 		public const string RandomPattern = "1234567890abcdefghijklmnopqrstuvwxyz";
+		private static Random Randomizer = new Random();
 
-		public static string AppendRandom(this string src, int length, string char_domain = null)
+		/// <summary>
+		/// Appends random chars to <paramref name="src"/> - string, until its length is less than <paramref name="length"/>
+		/// </summary>
+		/// <param name="src">Initial, source string. Will be preserved as a prefix.</param>
+		/// <param name="min_length">Minimal length of output</param>
+		/// <param name="char_domain">Set of chars for random appending</param>
+		/// <returns></returns>
+		public static string AppendRandom(this string src, int min_length, string char_domain = null)
 		{
 			int src_len = (string.IsNullOrEmpty(src)) ? 0 : src.Length;
 
-			if (src_len >= length)
+			if (src_len >= min_length)
 				return src;
 
-			if (string.IsNullOrEmpty(char_domain))
+			if ("" == char_domain && min_length > src_len)
+				throw new ArgumentException("Can not append chars from empty set. Pass at least one char to char_domain", "char_domain");
+
+			if (null == char_domain)
 				char_domain = RandomPattern;
 			
 			int len = char_domain.Length;
-			var r = new System.Random();
 
 			if (null == src)
 				src = "";
-			
-			while (src_len < length)
+
+			while (src_len < min_length)
 			{
-				src += char_domain[r.Next(len)];
+				src += char_domain[Randomizer.Next(len)];
 				src_len++;
 			}
 

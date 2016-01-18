@@ -1,6 +1,16 @@
 # CHANGELOG
 
-## 0.4.2
+## 0.4.5
+
+* `IHttpRequest` and `IHttpWebResponse`
+
+----
+
+## 0.4.4
+
+* Autodeploy from app.veyor
+
+## 0.4.1
 
 * WebLib -> Lib
 * Move extensions to the Ext

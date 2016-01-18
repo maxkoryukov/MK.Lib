@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace MK.Ext
 {
 	[TestFixture]
-	public class StringExtTest
+	public class StringExt__Mortal_Test
 	{
 		private string _mortal_dot(string s)
 		{

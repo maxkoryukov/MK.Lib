@@ -82,6 +82,12 @@
     <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Net\HttpWebRequestFactory.cs" />
+    <Compile Include="Net\IHttpWebRequestFactory.cs" />
+    <Compile Include="Net\HttpWebResponseWrapper.cs" />
+    <Compile Include="Net\HttpWebRequestWrapper.cs" />
+    <Compile Include="Net\IHttpWebResponse.cs" />
+    <Compile Include="Net\IHttpRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ext\StringEncodeExt.cs" />
     <Compile Include="Web\FormDataCollection.cs" />

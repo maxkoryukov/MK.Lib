@@ -1,6 +1,6 @@
 ﻿<NUnitProject>
-  <Settings activeconfig="Default" />
+  <Settings activeconfig="Default" processModel="Default" domainUsage="Default" />
   <Config name="Default" binpathtype="Auto">
-    <assembly path="src\MK.Lib.T\bin\MK.Lib.T.dll" />
+    <assembly path="src\MK.Lib.T\bin\MK.Lib.T.exe" />
   </Config>
 </NUnitProject>
