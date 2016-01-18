@@ -82,6 +82,11 @@ namespace MK.Net
 			get { return this._r.ContentLength; }
 			set { this._r.ContentLength = value; }
 		}
+
+		public Uri RequestUri
+		{
+			get { return this._r.RequestUri; }
+		}
 	}
 
 

@@ -5,6 +5,23 @@
 
 My useful C# things
 
+## Tests and Coverage
+
+To run test you could use NUnit project. Sad, but NUnit UI is available only for 2.x.
+
+### Coverage
+
+Cool thing, you could use two commands:
+
+```bat
+.\coverage-calc.bat
+.\coverage-report.bat
+```
+
+These commands will generate report in the `cover-html` directory.
+
+Be careful with reports in the local `cover-history` folder - they will used to generate **historical** part of your report, **but, please, do not add them to the git**.
+
 ## Thanks
 
 * to [**coveralls.net team**](https://github.com/coveralls-net/coveralls.net/graphs/contributors) for the detailed [HOWTO](https://github.com/coveralls-net/coveralls.net/wiki/CI-Integrations)

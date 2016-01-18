@@ -22,6 +22,7 @@ namespace MK.Net
 		bool AllowAutoRedirect { get; set; }
 		ICredentials Credentials { get; set; }
 		long ContentLength { get; set; }
+		Uri RequestUri { get; }
 	}
 
 }

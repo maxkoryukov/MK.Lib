@@ -11,6 +11,7 @@ namespace MK.Net
 	public class HttpWebRequestWrapperCrossStringTest
 	{
 		HttpWebRequestWrapper r;
+
 		Dictionary<string, string> val;
 
 		Dictionary<string, Acc> fu;
@@ -73,5 +74,80 @@ namespace MK.Net
 			}
 		}
 
+		#region Timeout
+		[TestCase(0, Result = 0)]
+		[TestCase(5, Result = 5)]
+		[TestCase(1000, Result = 1000)]
+		public int TestTimeout(int tm)
+		{
+			var f = new HttpWebRequestFactory();
+			var r = f.Create("http://example.com") as HttpWebRequestWrapper;
+
+			r.Timeout = tm;
+
+			return r.Timeout;
+		}
+		[TestCase(-1000)]
+		[TestCase(-10)]
+		public void TestTimeoutNegative(int tm)
+		{
+			var f = new HttpWebRequestFactory();
+			var r = f.Create("http://example.com") as HttpWebRequestWrapper;
+
+			Assert.That(
+				() =>
+				{
+					r.Timeout = tm;
+				}
+				, Throws.InstanceOf<ArgumentOutOfRangeException>()
+			);
+		}
+		#endregion
+
+		#region Content Length
+		
+		[TestCase(0, Result = 0)]
+		[TestCase(5, Result = 5)]
+		[TestCase(99999999999999L, Result = 99999999999999L)]
+		public long TestContentLength(long v)
+		{
+			var f = new HttpWebRequestFactory();
+			var r = f.Create("http://example.com") as HttpWebRequestWrapper;
+
+			r.ContentLength = v;
+			
+			return r.ContentLength;
+		}
+
+		[TestCase(-1000)]
+		[TestCase(-10)]
+		public void TestContentLengthNegative(long tm)
+		{
+			var f = new HttpWebRequestFactory();
+			var r = f.Create("http://example.com") as HttpWebRequestWrapper;
+
+			Assert.That(
+				() =>
+				{
+					r.ContentLength = tm;
+				}
+				, Throws.InstanceOf<ArgumentOutOfRangeException>()
+			);
+		}
+		#endregion
+
+
+
+		[TestCase(true, Result = true)]
+		[TestCase(false, Result = false)]
+		public bool TestRedirect(bool b)
+		{
+			var f = new HttpWebRequestFactory();
+			var r = f.Create("http://example.com") as HttpWebRequestWrapper;
+
+			r.AllowAutoRedirect = b;
+
+			return r.AllowAutoRedirect;
+		}
 	}
 }

@@ -56,6 +56,7 @@
     <Compile Include="Ext\DateTimeExtTest.cs" />
     <Compile Include="Ext\DateTimeJsonExtTest.cs" />
     <Compile Include="Ext\StringExt__AppendRandom_Test.cs" />
+    <Compile Include="Net\HttpWebRequestFactoryTest.cs" />
     <Compile Include="Net\HttpWebRequestWrapperTest.cs" />
     <Compile Include="NullUtilTest.cs" />
     <Compile Include="Program.cs" />

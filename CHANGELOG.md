@@ -3,6 +3,7 @@
 ## 0.4.5
 
 * `IHttpRequest` and `IHttpWebResponse`
+* Local coverage report utilities are configured
 
 ----
 

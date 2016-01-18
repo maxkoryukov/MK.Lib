@@ -10,5 +10,7 @@
 
 /coverage.xml
 /TestResult.xml
+/cover-html/
+/cover-history/
 
 PRIVATE-*
