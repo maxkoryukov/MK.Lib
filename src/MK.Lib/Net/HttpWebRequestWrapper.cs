@@ -87,6 +87,12 @@ namespace MK.Net
 		{
 			get { return this._r.RequestUri; }
 		}
+
+		public CookieContainer CookieContainer
+		{
+			get { return this._r.CookieContainer; }
+			set { this._r.CookieContainer = value; }
+		}
 	}
 
 

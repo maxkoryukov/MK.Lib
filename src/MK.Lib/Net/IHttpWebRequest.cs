@@ -23,6 +23,7 @@ namespace MK.Net
 		ICredentials Credentials { get; set; }
 		long ContentLength { get; set; }
 		Uri RequestUri { get; }
+		CookieContainer CookieContainer { get; set; }
 	}
 
 }
