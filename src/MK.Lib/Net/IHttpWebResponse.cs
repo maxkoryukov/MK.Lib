@@ -16,6 +16,7 @@ namespace MK.Net
 		CookieCollection Cookies { get; set; }
 		HttpStatusCode StatusCode { get; }
 		string Method { get; }
+		long ContentLength { get; set; }
 	}
 
 }

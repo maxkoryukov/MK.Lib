@@ -65,6 +65,11 @@ namespace MK.Net
 		{
 			get { return this._r.Method; }
 		}
+		public long ContentLength
+		{
+			get { return this._r.ContentLength; }
+			set { this._r.ContentLength = value; }
+		}
 	}
 
 
