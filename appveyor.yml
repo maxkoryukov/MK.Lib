@@ -48,7 +48,7 @@ after_test:
 
 deploy:
   release: $(MY_VERSION_NUMBER)
-  description: '[![Coverage Status](https://coveralls.io/repos/maxkoryukov/MK.Lib/badge.svg?branch=$(MY_VERSION_NUMBER)&service=github)](https://coveralls.io/github/maxkoryukov/MK.Lib?branch=$(MY_VERSION_NUMBER))
+  description: '[![Coverage Status](https://coveralls.io/repos/github/maxkoryukov/MK.Lib/badge.svg?branch=$(MY_VERSION_NUMBER))](https://coveralls.io/github/maxkoryukov/MK.Lib?branch=$(MY_VERSION_NUMBER))
 
 * **ADD INFO FROM CHANGELOG**'
   provider: GitHub
@@ -58,7 +58,7 @@ deploy:
   draft: true
   prerelease: false
   on:
-    branch: master                  # release from master branch only
+    #branch: master                  # release from master branch only
     appveyor_repo_tag: true         # deploy on tag push only
 
 notifications:
