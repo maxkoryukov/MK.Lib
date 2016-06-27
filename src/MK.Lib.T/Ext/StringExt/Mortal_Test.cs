@@ -1,10 +1,10 @@
 ﻿using System;
 using NUnit.Framework;
 
-namespace MK.Ext
+namespace MK.Ext.StringExtT
 {
 	[TestFixture]
-	public class StringExt__Mortal_Test
+	public class Mortal_Test
 	{
 		private string _mortal_dot(string s)
 		{

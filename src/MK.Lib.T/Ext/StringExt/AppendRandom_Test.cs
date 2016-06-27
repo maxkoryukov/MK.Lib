@@ -1,10 +1,10 @@
 ﻿using System;
 using NUnit.Framework;
 
-namespace MK.Ext
+namespace MK.Ext.StringExtT
 {
 	[TestFixture]
-	public class StringExt__AppendRandom_Test
+	public class AppendRandom_Test
 	{
 		[Test]
 		public void NotTheSameOnSimilarTests()

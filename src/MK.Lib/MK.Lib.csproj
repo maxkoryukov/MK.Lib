@@ -82,6 +82,7 @@
     <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ext\StringSlugExt.cs" />
     <Compile Include="Net\HttpWebRequestFactory.cs" />
     <Compile Include="Net\IHttpWebRequestFactory.cs" />
     <Compile Include="Net\HttpWebResponseWrapper.cs" />

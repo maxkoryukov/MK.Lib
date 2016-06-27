@@ -1,18 +1,11 @@
 # CHANGELOG
 
-## 0.4.5
+## 0.4
 
+* `ToSlug` for strings
 * `IHttpRequest` and `IHttpWebResponse`
 * Local coverage report utilities are configured
-
-----
-
-## 0.4.4
-
 * Autodeploy from app.veyor
-
-## 0.4.1
-
 * WebLib -> Lib
 * Move extensions to the Ext
 
