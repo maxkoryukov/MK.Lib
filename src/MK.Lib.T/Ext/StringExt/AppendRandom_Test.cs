@@ -44,6 +44,16 @@ namespace MK.Ext.StringExtT
 		}
 
 		[Test]
+		[TestCase(null, 8)]
+		[TestCase("", 40)]
+		public void WorksOnNullAndEmptyStrings(string s, int len)
+		{
+			var e = StringExt.AppendRandom(s, len);
+			Assert.That(e, Is.Not.Null);
+			Assert.That(e, Has.Length.EqualTo(len));
+		}
+
+		[Test]
 		public void NotThrowOnNullDomain()
 		{
 			Assert.DoesNotThrow(() =>
