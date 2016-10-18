@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 0.5
+
+* Allow to call `GetResponceStream()` twice on the same HttpResponse.
+
+----
+
 ## 0.4
 
 * `ToSlug` for strings
