@@ -62,6 +62,9 @@ namespace MK.Ext
 		/// <param name="text">Text.</param>
 		public static string RemoveDiacritics(this string text) 
 		{
+			if (string.IsNullOrEmpty(text))
+				return text;
+
 			var ns = text.Normalize(NormalizationForm.FormD);
 			var sb = new StringBuilder();
 
@@ -95,9 +98,9 @@ namespace MK.Ext
 			if (0 == maxlen)
 				return "";
 
-			int l = s.Length;
+			int len = s.Length;
 
-			if (l <= maxlen)
+			if (len <= maxlen)
 				return s;
 
 			int d = 0;
@@ -106,10 +109,10 @@ namespace MK.Ext
 			else
 				d = trailing_for_long.Length;
 
-			if (d > maxlen)
+			if (d >= maxlen)
 			{
 				// the tail > maxlen
-				return trailing_for_long.Substring(0, maxlen);
+				return trailing_for_long.Substring(d-maxlen, maxlen);
 			}
 
 			return s.Substring(0, maxlen - d) + trailing_for_long;

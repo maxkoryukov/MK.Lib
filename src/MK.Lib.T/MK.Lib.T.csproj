@@ -53,6 +53,8 @@
   <ItemGroup>
     <Compile Include="Collections\Generic\PairTest.cs" />
     <Compile Include="Ext\ByteArrayExtTest.cs" />
+    <Compile Include="Ext\StringExt\Cutter_Test.cs" />
+    <Compile Include="Ext\StringExt\RemoveDiacritics_Test.cs" />
     <Compile Include="Ext\StringSlugExtTest.cs" />
     <Compile Include="Ext\ExceptionDataExtTest.cs" />
     <Compile Include="Ext\DateTimeExtTest.cs" />

@@ -62,5 +62,20 @@ namespace MK.Ext.StringExtT
 				}
 			);
 		}
+
+		[Test]
+		[TestCase(null, 0)]
+		[TestCase("", 0)]
+		[TestCase("x", 0)]
+		[TestCase("x", 1)]
+		[TestCase("", -1)]
+		[TestCase("", -10)]
+		[TestCase("valha", -1)]
+		[TestCase("vague", 3)]
+		public void ReturnSourceOnLengthExceed(string origin, int len)
+		{
+			var act = StringExt.AppendRandom(origin, len);
+			Assert.That(act, Is.EqualTo(origin));
+		}
 	}
 }
