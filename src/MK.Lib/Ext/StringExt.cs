@@ -117,5 +117,15 @@ namespace MK.Ext
 
 			return s.Substring(0, maxlen - d) + trailing_for_long;
 		}
+
+		public static string ToTitleCase(this string s, CultureInfo culture = null){
+			if (string.IsNullOrWhiteSpace (s)) {
+				return s;
+			}
+			if (null == culture) {
+				culture = CultureInfo.InvariantCulture;
+			}
+			return culture.TextInfo.ToTitleCase(s.ToLower());
+		}
 	}
 }
